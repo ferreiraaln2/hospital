@@ -1,6 +1,6 @@
 # Dependências
 /node_modules
-/frontend-usuarios/node_modules
+/src/node_modules
 
 # Arquivos de log
 npm-debug.log*
@@ -15,7 +15,7 @@ pnpm-debug.log*
 
 # Arquivos de build
 /dist
-/frontend-usuarios/dist
+/src/dist
 
 # Arquivos do sistema
 .DS_Store
