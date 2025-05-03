@@ -1,32 +1,46 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <h1 class="welcome-title">{{ msg }}</h1>
+    
+    <div class="dashboard">
+      <div class="card dashboard-card">
+        <div class="card-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <h3>Setores</h3>
+        <p>Gerencie os setores do hospital</p>
+        <router-link to="/sectors" class="btn btn-primary">Acessar</router-link>
+      </div>
+      
+      <div class="card dashboard-card">
+        <div class="card-icon">
+          <i class="fas fa-user-injured"></i>
+        </div>
+        <h3>Pacientes</h3>
+        <p>Cadastre e gerencie pacientes</p>
+        <router-link to="/patients" class="btn btn-primary">Acessar</router-link>
+      </div>
+      
+      <div class="card dashboard-card">
+        <div class="card-icon">
+          <i class="fas fa-user-md"></i>
+        </div>
+        <h3>Médicos</h3>
+        <p>Gerencie o corpo clínico</p>
+        <router-link to="/doctors" class="btn btn-primary">Acessar</router-link>
+      </div>
+    </div>
+    
+    <div class="card mt-4">
+      <h2 class="card-title">Sobre o Sistema</h2>
+      <p>
+        Este sistema de gestão hospitalar permite o gerenciamento completo de setores, 
+        pacientes e médicos, facilitando a administração do hospital.
+      </p>
+      <p class="mt-4">
+        Para mais informações, consulte a documentação ou entre em contato com o suporte.
+      </p>
+    </div>
   </div>
 </template>
 
@@ -41,18 +55,47 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  text-align: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.dashboard-card {
+  text-align: center;
+  transition: transform 0.3s;
 }
-a {
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
   color: #42b983;
+}
+
+.dashboard-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.dashboard-card p {
+  margin-bottom: 1.5rem;
+  color: #7f8c8d;
+}
+
+.dashboard-card .btn {
+  display: inline-block;
 }
 </style>
